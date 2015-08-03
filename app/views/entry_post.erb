@@ -1,0 +1,29 @@
+
+<div class="container">
+  <h1>Hello <%= session[:name] %><small> Tell us about your property!</small> </h1>
+  <hr>
+  <form id="LoginForm" action="/create" method="POST">
+    <input type="text" class="form-control" name="post[title]" placeholder="Title, location, size" required></input>
+    <br>
+    <textarea type="text" class="form-control" name="post[text]" rows="10" placeholder="Description" required></textarea>
+    <br>
+    <input type="text"  class="form-control" name="post[tags]" placeholder="Let's tag them!, e.g: <%= session[:name] %>, bungalow, beach, holiday" data-role="tagsinput"></input>
+    <br>
+    <button type="submit" name="post[btn]" value="true" class="btn btn-primary">List this property!</button>
+  </form>
+</div>
+
+<div class="container">
+  <hr>
+  <form id="NavForm" action="/create" method="POST">
+    <h1>Want to Go Somewhere Else?</h1>
+    <br>
+    <button type="submit" name="nav[view_btn]" value="true" class="btn btn-info">View Posts</button>
+  </form>
+  <br>
+    <form
+    <a href="/logout" action="/logout" method="post"
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">Logoutzzz</button>
+  </form>
+</div>

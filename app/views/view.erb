@@ -1,0 +1,47 @@
+<div class="container"
+  <h3> Listings: </h3>
+
+  <FONT FACE="symbol"
+<% unless @posts.nil? %>
+  <% @post.each do |x| %>
+    <a href="/view/<%= x.id %>"><%=x.title %></a>
+    <% end %>
+  <% end %>
+  <br>
+
+
+<h3>Please choose from the following tags</h3>
+  <% unless @tags.nil? %>
+    <% @tags.each do |x| %>
+      <a href="/view/tags/<%=x.id %>"<%= x.name %></a>
+      <% end %>
+  <% end %>
+</div>
+
+<div class="container">
+ <h1>Welcome to Josh and Azeem's world</h1>
+
+  <font face="arial">
+    <% @post.each do |x| %>
+      <h3>You are now editing your post:
+
+
+      <%= x.title %> </h3>
+
+
+      <form action="/view/<%= x.id %>" method="post">
+
+        <input type="hidden" name="_method" value="put">
+          <b>Body</b> <br>
+          <textarea style="color: white; background-color: grey" cols="20" rows="5" name="body"> <%= @post.text %>
+          </textarea>
+           <textarea style="color: white; background-color: grey" cols="20" rows="5" name="title"> <%= @post.title %>
+          <input type="submit">
+
+      </form>
+
+    <br>
+  <% end %>
+
+
+</div>
